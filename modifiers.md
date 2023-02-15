@@ -224,7 +224,7 @@ Missiles will moving towards the destination of their target rather than the cur
 > tags: gameplayImpact  
 > info: Tracking weapons can fire without needs of target in arc.
 
-Missiles will moving towards the destination of their target, rather than the current location of their target.
+Tracking weapons can fire even if their target isn't in firing arc.
 
 ## orb_retargeting
 > tags: gameplayImpact  
