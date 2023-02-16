@@ -101,11 +101,11 @@ Units will nolonger consider anything is their enemies.
 
 Units will consider anything is their allies, even if they are enemies at the same time. This cause energy transfer to charge them.
 
-## filed_location_fixed
+## random_filed_location
 > tags:  gameplayImpact  
-> info: Units will be field at the centre of their spawn.
+> info: Units will be field at a random location in their spawn.
 
-Fielded units will appear at the centre of their spawn, rather than a random location in spawn.
+Fielded units will appear at a random location in spawn, rather than the centre of their spawn.
 
 ## 1k_builder
 > tags: gameplayImpact  
@@ -173,11 +173,23 @@ Turning speed of units are set to infinity deg/s, making them finish turning ins
 
 All parts of units without any weapons are tripled, while the cost to build them isn't changed.
 
+## hpd_singlehit
+> tags: gameplayImpact  
+> info: Heavy pd bullets are destroyed upon hitting any unit.
+
+Heavy PD bullets are set to dead when they hit any unit, rather than using the "remaining damage" mechanic.
+
+## hpd_deadhit
+> tags: gameplayImpact  
+> info: Dead heavy pd bullets can still hit things.
+
+Heavy PD bullets can hit things even if they are set to dead.
+
 ## hpd_multihit
 > tags: gameplayImpact  
 > info: Allows heavy pd bullet hit multiple units.
 
-Heavy PD bullet will pass through units to hit multiple units.
+Heavy PD bullets will pass through units to hit multiple units.
 
 ## remove_minimum_range
 > tags: gameplayImpact  
@@ -240,9 +252,9 @@ Energy transfer drains energy from enemies. In most cases this put enemies in a 
 
 ## stasis_field_hazard
 > tags: gameplayImpact  
-> info: A stasic field cover whole map that slow units, drains clock and jump.
+> info: A stasic field cover whole map that slow units, drains cloak and jump.
 
-All ships are slowed and get their clock and jump drained, just like what stasic field do.
+All ships are slowed and get their cloak and jump drained, just like what stasic field do.
 
 ## random_orb_fire_range
 > tags: gameplayImpact  
@@ -372,7 +384,7 @@ Cloaked units are immune to all types of damage, includes multihit, aoe, and bur
 
 ## cloak_disappeared
 > tags: gameplayImpact, informingImpact  
-> info: Clocked unarmed units completely disappeared to enemies.
+> info: Cloaked unarmed units completely disappeared to enemies.
 
 Cloaked unarmed units are completely disappeared to enemies. They are not shown on their screen, AI rules of enemies cannot trace them, and weapons of enemies won't attack them since they don't know these units exist.
 
