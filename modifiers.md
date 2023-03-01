@@ -51,6 +51,12 @@ Having battleship thruster on unit is nologer being considered as invalid.
 
 Remove cloaked enemies from weapons targeting of units.
 
+## cloak_attacked
+> tags: gameplayImpact  
+> info: All weapons will engage cloak regardless they can hit cloak or not. Instant weapons are not affected.
+
+Remove invulnerable check of weapons targeting system, they will try fire projectiles at cloaked units. This modifier has no effect to instant weapon since they only do guaranteed hits.
+
 ## units_radius_ignore_occupied_cells
 > tags: gameplayImpact, recomputeUnitsRequired  
 > info: Units radius will ignore occupied cells, only use center of parts.
