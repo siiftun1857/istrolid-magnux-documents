@@ -98,7 +98,6 @@ Valid themes are `main`, `grayblue`, `orange_legacy`, `blue`, `fadered_legacy`, 
 
 ## modifiers
 > Usage: !modifiers [\<enable|disable|invert|info\> \<modifiers ...\>|reset|list]  
-> Exclusive to host  
 
 `modifiers enable ...`: Enable modifiers.  
 `modifiers disable ...`: Disable modifiers.  
