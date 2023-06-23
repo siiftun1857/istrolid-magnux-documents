@@ -47,21 +47,37 @@ Having battleship thruster on unit is nologer being considered as invalid.
 
 ## cloak_not_attacked
 > tags: gameplayImpact  
+> groups: vanilla_defects  
 > info: Units don't know how to attack cloaked units.
 
 Remove cloaked enemies from weapons targeting of units.
 
-## cloak_attacked
-> tags: gameplayImpact  
-> info: All weapons will engage cloak regardless they can hit cloak or not. Instant weapons are not affected.
-
-Remove invulnerable check of weapons targeting system, they will try fire projectiles at cloaked units. This modifier has no effect to instant weapon since they only do guaranteed hits.
-
 ## units_radius_ignore_occupied_cells
 > tags: gameplayImpact, recomputeUnitsRequired  
+> groups: vanilla_defects  
 > info: Units radius will ignore occupied cells, only use center of parts.
 
 The radius compute will only consider the center of parts rather than their occupied cells. This cause ships with same occupied cells nolonger have same raidus.
+
+## jump_maintain_energy_usage
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Jump engine acts as a negative regen generator.
+
+Jump engines will keep consuming energy even if jump is already fully charged.
+
+## weapons_hit_dead_entites
+> tags: gameplayImpact  
+> info: Weapons will hit dead entites.
+
+Bullets will hit dead units and instent weapons will fire at dead units.
+
+## weapons_disabled_inside_enemies
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Weapons cannot fire when they or their minrange inside enemies.
+
+Enable an ill-designed weapon aim compute that cause weapons cannot fire when their min range (0m for most weapons) are beyond the target radius and inside the target.
 
 ## units_ai_message
 > tags: displayImpact  
@@ -109,6 +125,7 @@ Units will consider anything is their allies, even if they are enemies at the sa
 
 ## random_filed_location
 > tags:  gameplayImpact  
+> groups: vanilla_defects  
 > info: Units will be field at a random location in their spawn.
 
 Fielded units will appear at a random location in spawn, rather than the centre of their spawn.
@@ -187,6 +204,7 @@ Heavy PD bullets are set to dead when they hit any unit, rather than using the "
 
 ## hpd_deadhit
 > tags: gameplayImpact  
+> groups: vanilla_defects  
 > info: Dead heavy pd bullets can still hit things.
 
 Heavy PD bullets can hit things even if they are set to dead.
@@ -264,6 +282,7 @@ All ships are slowed and get their cloak and jump drained, just like what stasic
 
 ## random_orb_fire_range
 > tags: gameplayImpact  
+> groups: vanilla_defects  
 > info: Release time of orb spheres from Orb Launcher are back random.
 
 The time of orb released from their pod become random.
@@ -358,6 +377,12 @@ Energy Transfer can charge units with negative energy, i.e. units stunned to ene
 
 Units are killed when they recieved any damage.
 
+## cloak_attacked
+> tags: gameplayImpact  
+> info: All weapons will engage cloak regardless they can hit cloak or not. Instant weapons are not affected.
+
+Remove invulnerable check of weapons targeting system, they will try fire projectiles at cloaked units. This modifier has no effect to instant weapon since they only do guaranteed hits.
+
 ## cloak_disruptable
 > tags: gameplayImpact  
 > info: Weapons that can hit cloaked units will also decloak them.
@@ -424,6 +449,11 @@ Bullets will spinning on clients. Doesn't affect their true rotation.
 
 Position of everything are set to multiples of 100 on clients. Doesn't affect their true position.
 
+## burn_effect
+> tags: displayImpact  
+> info: Units have burning visul effects.
+
+Units are visually burning, but are not buring actually (unless they get attacked by real flame).
 ## flash_off
 > tags: displayImpact  
 > info: Turn off units destruction flash.
