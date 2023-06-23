@@ -68,6 +68,7 @@ Jump engines will keep consuming energy even if jump is already fully charged.
 
 ## weapons_hit_dead_entites
 > tags: gameplayImpact  
+> groups: vanilla_defects  
 > info: Weapons will hit dead entites.
 
 Bullets will hit dead units and instent weapons will fire at dead units.
