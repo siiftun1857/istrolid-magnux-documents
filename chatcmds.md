@@ -35,6 +35,7 @@ Only works in sandbox.
 
 ## side
 > Usage: !side \<alpha|beta|spectators\>  
+> Alias: join  
 > Require waiting state  
 
 `<alpha|beta|spectators>`: The team you want to join.  
@@ -46,10 +47,10 @@ Set your own team. Useful if the team has 3 or more players where your client wo
 > Exclusive to host  
 > Require waiting state  
 
-`<new host name>`: The new server type you want.  
+`<server type>`: The new server type you want.  
 
 Set the server type to the given value, it applied when the game started.  
-Valid server types are `head`, `sandbox`, `conquer`, `deathmatch`, `blitz`, `survival`.  
+Valid server types are `sandbox`, `conquest`, `deathmatch`, `blitz`, `survival`.  
 
 ## start
 > Usage: !start [-S|-E] [seed]  
@@ -95,6 +96,21 @@ Set the speed of the game.
 
 Set the theme of the game.  
 Valid themes are `main`, `grayblue`, `orange_legacy`, `blue`, `fadered_legacy`, `fadered`, `tealwhite`, `whitepurple`, `darkness`, `moonyellow`, `pinkpurple`, `greenbrown`, `bluebrown`, `tealorange_legacy`, `greenpurple`, `lemondarkred`, `lemondarkred_legacy`, `tanslate`, `redgreen_legacy`, `yellowpuce`, `yellowpuce_legacy`, `yellowcyan`, `puredarkness`, `purebrightness`, `galaxy`.  
+
+## players
+> Usage: !players   
+
+Print all players in the server.  
+
+## recolorai
+> Usage: !recolorai \<color\> [player number ...]   
+
+`<color>`: A hex color, it can start with or without #.  
+`[player number ...] `: Specific players to recolor, split with space to put mutliple numbers.  
+
+Change the player color of AI players.  
+You can get player number via !players command.  
+Run recolorai without player number given will change all your AI players.  
 
 ## modifiers
 > Usage: !modifiers [\<enable|disable|invert|info\> \<modifiers ...\>|reset|list]  
