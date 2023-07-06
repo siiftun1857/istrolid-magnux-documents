@@ -95,7 +95,7 @@ Enable an ill-designed weapon aim compute that cause weapons cannot fire when th
 
 Weapons like sidewinders and autocannon will cancel their queued bullets when fire.
 
-The effect is only Visible when such weapon has their reload time significantly reduced, and the only valid design to make this happen is autocannon with 4 or more reloaders.
+The effect is only visible when such weapon has their reload time significantly reduced, and the only valid design to make this happen is autocannon with 4 or more reloaders.
 
 ## units_ai_message
 > tags: displayImpact  
