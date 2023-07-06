@@ -9,6 +9,14 @@
 > informingImpact : This modifier affect the ability of players know the stats of units and games. Modifiers with this tag are not allowed to be changed in mid game.  
 > disallowStart : Starting a game that is not sandbox mode with enabled modifiers with this tag are not allowed.
 
+## invalid
+> tags: gameplayImpact  
+> info: Allows unlimited usage of invlaid designs.
+
+Allows units with any types of invalid with any amount in all game modes.
+
+This is an extremely dangerous modifier. Use with cautious!
+
 ## gamedev
 > tags: recomputeUnitsRequired, clearNetRequired, gameplayImpact  
 > incompatible_with: legacy_v4  
@@ -79,6 +87,15 @@ Bullets will hit dead units and instent weapons will fire at dead units.
 > info: Weapons cannot fire when they or their minrange inside enemies.
 
 Enable an ill-designed weapon aim compute that cause weapons cannot fire when their min range (0m for most weapons) are beyond the target radius and inside the target.
+
+## weapons_volley_overriden
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Weapons fire will clear their current volley.
+
+Weapons like sidewinders and autocannon will cancel their queued bullets when fire.
+
+The effect is only Visible when such weapon has their reload time significantly reduced, and the only valid design to make this happen is autocannon with 4 or more reloaders.
 
 ## units_ai_message
 > tags: displayImpact  
@@ -257,6 +274,12 @@ When missiles lose their target, they will lock down a new target, if any.
 
 Missiles will moving towards the destination of their target rather than the current location of their target.
 
+## missiles_track_cloaked
+> tags: gameplayImpact  
+> info: missiles will track cloaked units.
+
+Missiles track cloaked units, and hit them when target decloaked.
+
 ## missiles_full_arc
 > tags: gameplayImpact  
 > info: Tracking weapons can fire without needs of target in arc.
@@ -366,6 +389,12 @@ Burn of units will be reduced to their current hp if they take damage from other
 
 There are no minimum limit of energy and the stun effect duration from EMP are extended to infinity.
 
+## shield_energy_usage_no_thershold
+> tags: gameplayImpact  
+> info: Shield energy usage has no thershold.
+
+Remore the energy thershold for shields to working.
+
 ## charger_heal_stun
 > tags: gameplayImpact  
 > info: Chargers can charge stunned ships.
@@ -408,6 +437,12 @@ Cloaked units cannot decloak enemies.
 
 Cloaked units can fire weapons without decloak them.
 
+## cloak_vulnerable
+> tags: gameplayImpact  
+> info: Cloaked ships are vulnerable to multihit and aoe.
+
+Make cloaked units vulnerable to multihit bullets and aoe explosions.
+
 ## cloak_invulnerable
 > tags: gameplayImpact  
 > info: Cloaked ships are immune to all types of damage.
@@ -419,6 +454,12 @@ Cloaked units are immune to all types of damage, includes multihit, aoe, and bur
 > info: Cloaked unarmed units completely disappeared to enemies.
 
 Cloaked unarmed units are completely disappeared to enemies. They are not shown on their screen, AI rules of enemies cannot trace them, and weapons of enemies won't attack them since they don't know these units exist.
+
+## cloak_phenomena
+> tags: gameplayImpact  
+> info: All units cloak 21%/s overtime.
+
+All units passively gains cloak at a rate of 21% of mass per second.
 
 ## hide_stats
 > tags: displayImpact, informingImpact, clearNetRequired  
