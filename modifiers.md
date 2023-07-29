@@ -311,6 +311,24 @@ All ships are slowed and get their cloak and jump drained, just like what stasic
 
 The time of orb released from their pod become random.
 
+## random_machine_gun_spread
+> tags: gameplayImpact  
+> info: Spread of Machine Gun are back random.
+
+Enable random spread for Machine Gun, which are disabled without this modifier.
+
+## random_sniper_gun_fire_interval
+> tags: gameplayImpact  
+> info: Fire interval of Sniper Gun are back random.
+
+Enable random fire interval for Sniper Gun, which are disabled without this modifier.
+
+## sniper_gun_fire_no_move
+> tags: gameplayImpact  
+> info: Standing still is required to fire Sniper Gun.
+
+Enable no movement requirement for Sniper Gun, which are disabled without this modifier.
+
 ## accurately_weapon_range
 > tags: gameplayImpact, recomputeUnitsRequired  
 > info: Weapons will fire with their range become more accurate.
@@ -460,6 +478,12 @@ Cloaked unarmed units are completely disappeared to enemies. They are not shown 
 > info: All units cloak 21%/s overtime.
 
 All units passively gains cloak at a rate of 21% of mass per second.
+
+## jump_no_minjump
+> tags: gameplayImpact  
+> info: Jump engines do not have min jump distance.
+
+Remove the min jump to jump.
 
 ## hide_stats
 > tags: displayImpact, informingImpact, clearNetRequired  
