@@ -66,11 +66,17 @@ This set a 6 sec countdown which can be aborted.
 
 ## givehost
 > Usage: !givehost \<new host name\>  
-> Exclusive to host  
+> Exclusive to host and verified  
 
 `<new host name>`: The player to become new host.  
 
 Set the specific player to host. This remove your own host role.  
+
+## takehost
+> Usage: !takehost  
+> Exclusive to verified  
+
+Give you host role.  
 
 ## shuffle
 > Usage: !shuffle  
