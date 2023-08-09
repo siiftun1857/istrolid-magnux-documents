@@ -6,15 +6,15 @@
 > gameplayImpact : This modifier affect how the gameplay works. Modifiers with this tag are not allowed to be changed in mid game.  
 > displayImpact : This modifier affect what can players see.  
 > controllingImpact : This modifier affect how players control their units and their building queue. Modifiers with this tag are not allowed to be changed in mid game.  
-> informingImpact : This modifier affect the ability of players know the stats of units and games. Modifiers with this tag are not allowed to be changed in mid game.  
+> informingImpact : This modifier affect the ability of players know the stats of units and games. Modifiers with this tag are not allowed to be changed in mid game.
+> mapGeneratorImpact : This modifier affect how the map generator works.  
 > disallowStart : Starting a game that is not sandbox mode with enabled modifiers with this tag are not allowed.
 
 ## invalid
 > tags: gameplayImpact  
 > info: Allows unlimited usage of invlaid designs.
 
-Allows units with any types of invalid with any amount in all game modes.
-
+Allows units with any types of invalid with any amount in all game modes.  
 This is an extremely dangerous modifier. Use with cautious!
 
 ## gamedev
@@ -35,10 +35,8 @@ This modifier bring the game back to v49 behaviors, includes units center comput
 > tags: gameplayImpact  
 > info: Allows overcost design, with an extra cost penalty.
 
-Overcost is allowed, but there is a penalty for doing it.
-
-A cost multiplier is applied to cost of all parts. The cost multiplier is 100% if not overcost, and for every 2% beyond the cost limit, the cost multiplier increase 1%.
-
+Overcost is allowed, but there is a penalty for doing it.  
+A cost multiplier is applied to cost of all parts. The cost multiplier is 100% if not overcost, and for every 2% beyond the cost limit, the cost multiplier increase 1%.  
 This means a unit with $2000 parts cost will cost $3000 to build, and a unit with $3000 parts cost will cost $6000 to build.
 
 ## supercapital_bridge
@@ -71,8 +69,7 @@ The radius compute will only consider the center of parts rather than their occu
 > tags: displayImpact  
 > info: Shield render use expanded radius rather than using its true radius.
 
-Enable the units shield rendering method that currently used by vanilla games.
-
+Enable the units shield rendering method that currently used by vanilla games.  
 Enable this modifier will cause units shield expand by this formula:  
 $$r_{after}={{2\sqrt{2}\times r_{before}+80\sqrt{2}}\over{3}}$$
 
@@ -102,8 +99,7 @@ Enable an ill-designed weapon aim compute that cause weapons cannot fire when th
 > groups: vanilla_defects  
 > info: Weapons fire will clear their current volley.
 
-Weapons like Sidewinders and Autocannon will cancel their queued bullets when fire, result in a waste of energy.
-
+Weapons like Sidewinders and Autocannon will cancel their queued bullets when fire, result in a waste of energy.  
 The effect is only visible when such weapon has their reload time significantly reduced, and the only valid design to make this happen is Autocannon with 4 or more reloaders.
 
 ## units_ai_message
@@ -116,8 +112,7 @@ Show AI messages when you select units. You will need to turn it on on your clie
 > tags: controllingImpact, clearNetRequired  
 > info: Give players full control to all team units.
 
-You have full control to all units belong to your team, which is exclusive to their builder without this modifier.
-
+You have full control to all units belong to your team, which is exclusive to their builder without this modifier.  
 You are allowed to do anything with units in your team, includes move, follow, stop, and self-destruct. Only enable this modifier if you trust your teammates.
 
 ## ai_only
@@ -246,8 +241,7 @@ Heavy PD bullets will pass through units to hit multiple units.
 > tags: gameplayImpact  
 > info: Remove minimum range of Artillery Gun and Orb Launcher.
 
-The minimum fire range of Artillery Gun and Orb Launcher are removed.
-
+The minimum fire range of Artillery Gun and Orb Launcher are removed.  
 For the Artillery Gun, it can instantly hit anything close to it. For Orb Launcher, the orb can fly beyond the target and then can't hit them.
 
 ## self_push_pull_waves
@@ -529,6 +523,7 @@ Position of everything are set to multiples of 100 on clients. Doesn't affect th
 > info: Units have burning visul effects.
 
 Units are visually burning, but are not buring actually (unless they get attacked by real flame).
+
 ## flash_off
 > tags: displayImpact  
 > info: Turn off units destruction flash.
@@ -546,3 +541,10 @@ Units warps into the battlefield rather than assembled.
 > info: A very cool death effect that dead units top out from map.
 
 Destroyed units fly upwards, throws their wrecks in the same direction.
+
+## generating_theme
+> tags: mapGeneratorImpact  
+> info: Map generator will generate theme and less rock.
+
+The map generator will set the theme of the battlefield when the game starts.  
+One or more types of rocks will be excluded from generating.
