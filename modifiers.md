@@ -93,7 +93,7 @@ Enable an ill-designed weapon aim compute that cause weapons cannot fire when th
 > groups: vanilla_defects  
 > info: Weapons fire will clear their current volley.
 
-Weapons like sidewinders and autocannon will cancel their queued bullets when fire.
+Weapons like Sidewinders and Autocannon will cancel their queued bullets when fire, result in a waste of energy.
 
 The effect is only visible when such weapon has their reload time significantly reduced, and the only valid design to make this happen is autocannon with 4 or more reloaders.
 
