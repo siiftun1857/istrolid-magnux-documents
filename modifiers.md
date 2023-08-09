@@ -67,6 +67,15 @@ Remove cloaked enemies from weapons targeting of units.
 
 The radius compute will only consider the center of parts rather than their occupied cells. This cause ships with same occupied cells nolonger have same raidus.
 
+## units_radius_shield_render_larger
+> tags: displayImpact  
+> info: Shield render use expanded radius rather than using its true radius.
+
+Enable the units shield rendering method that currently used by vanilla games.
+
+Enable this modifier will cause units shield expand by this formula:  
+$$r_{after}={{2\sqrt{2}\times r_{before}+80\sqrt{2}}\over{3}}$$
+
 ## jump_maintain_energy_usage
 > tags: gameplayImpact  
 > groups: vanilla_defects  
