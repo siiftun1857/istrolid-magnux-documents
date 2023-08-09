@@ -14,6 +14,14 @@ Shows this page.
 Make all messages from the server that are said to you using the language you choose.  
 You can check the translation project of Magnux at <https://crowdin.com/project/istrolid-magnux>.  
 
+## serverlang
+> Usage: !serverlang \<lang\>  
+> Exclusive to verified  
+
+`<lang>`: the language code you choose.
+
+Make all messages from the server that are said to all players using the language you choose.
+
 ## seed
 > Usage: !seed  
 
