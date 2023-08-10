@@ -464,11 +464,12 @@ Cloaked units cannot decloak enemies.
 
 Cloaked units can fire weapons without decloak them.
 
-## cloak_advanced
+## cloak_hardened
 > tags: gameplayImpact  
-> info: Fire weapons will not decloak the ship doing it.
+> info: Cloaked ships cannot be decloak by close to enemies.
 
-Cloaked units can fire weapons without decloak them.
+Decloak enemies by stay in 100m to it is disabled.  
+Cloaked units can still be decloaked by stasis, cloak decay overtime, or fire weapon.
 
 ## cloak_vulnerable
 > tags: gameplayImpact  
