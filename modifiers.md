@@ -410,6 +410,12 @@ Burn of units will be reduced to their current hp if they take damage from other
 
 There are no minimum limit of energy and the stun effect duration from EMP are extended to infinity.
 
+## emp_stun_disabled
+> tags: gameplayImpact  
+> info: EMP stun disabled.
+
+EMP damage cannot cause stun effect i.e. reducing energy to negative value.
+
 ## shield_energy_usage_no_thershold
 > tags: gameplayImpact  
 > info: Shield energy usage has no thershold.
@@ -452,7 +458,13 @@ Collision between cloaked untis are disabled, allowing them stack in the same lo
 
 Cloaked units cannot decloak enemies.
 
-## cloak_hardened
+## cloak_advanced
+> tags: gameplayImpact  
+> info: Fire weapons will not decloak the ship doing it.
+
+Cloaked units can fire weapons without decloak them.
+
+## cloak_advanced
 > tags: gameplayImpact  
 > info: Fire weapons will not decloak the ship doing it.
 
