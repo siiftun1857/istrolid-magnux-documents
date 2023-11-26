@@ -33,7 +33,7 @@ Cloak Generator:
 
 Jump Engine:
 * mass: 15T => 10T
-* jump engine size: 3 => 123
+* max jump: 600m => 650m
 
 Point Defence:
 * cost: $5 => $4
