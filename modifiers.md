@@ -17,6 +17,13 @@
 Allows units with any types of invalid with any amount in all game modes.  
 This is an extremely dangerous modifier. Use with cautious!
 
+## generating_theme
+> tags: mapGeneratorImpact  
+> info: Map generator will generate theme and less rock.
+
+The map generator will set the theme of the battlefield when the game starts.  
+One or more types of rocks will be excluded from generating.
+
 ## gamedev
 > tags: recomputeUnitsRequired, clearNetRequired, gameplayImpact  
 > incompatible_with: legacy_v4  
@@ -30,6 +37,14 @@ This modifier enable gamedev changes, includes shield absorb extra damage at cos
 > info: Enable a legacy game config from beta version 49.
 
 This modifier bring the game back to v49 behaviors, includes units center compute now use their mass center rather than parts center.
+
+## kitebug
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Enables kitebug.
+
+The kitebug is a bizarre interaction between pull and other weapons, especially Phase Bomb Launcher. It caused by pull giving very high burst velocity to an enemy, making the movement predication used by weapons consider the target is coming very soon but it does not, resulting other weapons fire too far away from the target, waste their energy, damage and cooldown.  
+The server will make units not to be considered as faster than its maximum speed for weapons target purpose. This modifier will turn it off, return the kitebug to the game.
 
 ## overcost
 > tags: gameplayImpact  
@@ -102,6 +117,20 @@ Enable an ill-designed weapon aim compute that cause weapons cannot fire when th
 Weapons like Sidewinders and Autocannon will cancel their queued bullets when fire, result in a waste of energy.  
 The effect is only visible when such weapon has their reload time significantly reduced, and the only valid design to make this happen is Autocannon with 4 or more reloaders.
 
+## sidewinder_volley_delay
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Sidewinder has a delay between two bullets in a volley.
+
+Add an 1/16 second delay between bullets of a volley of Sidewinders. Without this modifier, Sidewinders will unload its entire volley at the same time.
+
+## units_collide_during_warpin
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Collision between new untis and old units are disabled.
+
+Make all units collides at same strenght. Without this modifier, newly built units who have warp in flast on will have reduced collision with those who don't.
+
 ## units_ai_message
 > tags: displayImpact  
 > info: Shows AI messages.
@@ -120,6 +149,24 @@ You are allowed to do anything with units in your team, includes move, follow, s
 > info: Disable manual control, only AI rules is allowed.
 
 You cannot control units, units are exclusivly controlled by their AI. Useful when you want host an AI only race.
+
+## ai_off
+> tags: controllingImpact  
+> info: Disable AI rules.
+
+All ai rules are disabled, only manual controls.
+
+## ai_player_disabled
+> tags: gameplayImpact  
+> info: Disable AI players.
+
+AI players are disabled. Enabling this modifier will kick all AI players.
+
+## fleet_lock
+> tags: controllingImpact  
+> info: Disable AI rules.
+
+All ai rules are disabled, only manual controls.
 
 ## never_dead
 > tags: disallowStart, gameplayImpact  
@@ -152,6 +199,13 @@ Units will consider anything is their allies, even if they are enemies at the sa
 
 Fielded units will appear at a random location in spawn, rather than the centre of their spawn.
 
+## random_ai_rule_detals
+> tags:  gameplayImpact  
+> groups: vanilla_defects  
+> info: Units ai rules will use randomness.
+
+AI rules will use random generator to determine their behavior, resulting different actions taken in the same situation.
+
 ## 1k_builder
 > tags: gameplayImpact  
 > info: Units building cost $1000 each time, and build the most possible amount of units in $1000.
@@ -170,17 +224,47 @@ The capture time of command points are reduced to 0 sec.
 
 Friction are cut in half, this makes maximum speed of all units twice.
 
+## one_third_friction
+> tags: gameplayImpact  
+> info: 1/3 friction, tripled maximum speed.
+
+Friction are cut in third, this makes maximum speed of all units thrice.
+
 ## no_friction
 > tags: gameplayImpact  
 > info: Real space that no friction.
 
 Friction are disabled. This is a very wild modifier and units navigation cannot handle it, they will launch themselves out of their destination in a crazy speed.
 
-## tripled_energy
+## tripled_hp
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Units raw HP amount are tripled.
+
+HP of units are tripled.
+
+## tripled_energy_capacity
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Units energy capacity are tripled.
+
+Energy capacity of units are tripled.
+
+## tripled_energy_generating
 > tags: gameplayImpact  
 > info: Energy regeneration and transfer amounts are tripled.
 
 Energy regen of units are tripled, and the transfer amount of energy transfer are tripled.
+
+## tripled_shield_capacity
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Units shield capacity are tripled.
+
+Shield capacity of units are tripled.
+
+## tripled_shield_generating
+> tags: gameplayImpact  
+> info: Shield regeneration amounts and energy usage are tripled.
+
+Shield regen of units are tripled, while energy cost per shield HP generated are the same.
 
 ## infinity_energy
 > tags: gameplayImpact  
@@ -237,6 +321,18 @@ Heavy PD bullets can hit things even if they are set to dead.
 
 Heavy PD bullets will pass through units to hit multiple units.
 
+## tesla_hits_missiles
+> tags: gameplayImpact  
+> info: Tesla now hits missiles.
+
+Tesla will now fire and arc nearby missiles to destroy them.
+
+## flak_hits_missiles
+> tags: gameplayImpact  
+> info: Flak cannon now hits missiles.
+
+Flak bullets will delete all missiles in its blast area.
+
 ## remove_minimum_range
 > tags: gameplayImpact  
 > info: Remove minimum range of Artillery Gun and Orb Launcher.
@@ -264,6 +360,19 @@ When pulls and pushes hit units, the unit fire them are pulled or pushed for 50%
 > info: Power of pulles and pushes are applied on both units get hit and units fire them.
 
 When pulls and pushes hit units, both the unit fire them and the unit get hit are pulled or pushed, and the strength is based on their mass, lighter ships are affected more than heavy ships.
+
+## push_pull_waves_force_hit_per_tick
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Bullets of pulles and pushes apply their force effect every tick even if they did it to a target before.
+
+Pull and push bullets will apply their force effect as long as they are touching an enemy, even if they have been hit before.
+
+## phase_bomb_no_delay
+> tags: gameplayImpact  
+> info: Phase bomb has no arm delay.
+
+Phase Bombs will skip their 1.75-second arm delay and immediately fly towards their target.
 
 ## missiles_retargeting
 > tags: gameplayImpact  
@@ -295,17 +404,55 @@ Tracking weapons can fire even if their target isn't in firing arc.
 
 When Orbs released from their pods, they will target enemies and change their launch direction.
 
+## orb_overshoot
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Orbs from Orb launcher can overshoot an extremely long range.
+
+Make overshoot range of Orbs extended by bullet speed mods.
+
+## no_overshoot
+> tags: gameplayImpact  
+> info: Set overshoot stat of all weapons to 0%.
+
+Completely disable the overshoot mechanic, bullets will instantly vanish upon passing their maximum range.
+
+## no_overshoot_decay
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Overshooted bullets nolonger have their damage reduced.
+
+Make bullets do full damage in their overshooted range.
+
+## weapons_full_arc
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: All weapons have 360 firing arc.
+
+All turrets can shoot any directions.
+
 ## energy_nosferatu_transfer
 > tags: gameplayImpact  
 > info: Energy transfer drains energy from enemies.
 
 Energy transfer drains energy from enemies. In most cases this put enemies in a dead empty state that disabled to fire or move.
 
+## energy_transfer_infinity_range
+> tags: gameplayImpact  
+> info: Energy transfer has infinity operate range.
+
+Energy transfer do not have an operation range limit, charge all allies. With `energy_nosferatu_transfer`, they also drain all enemies.
+
 ## stasis_field_hazard
 > tags: gameplayImpact  
 > info: A stasic field cover whole map that slow units, drains cloak and jump.
 
 All ships are slowed and get their cloak and jump drained, just like what stasic field do.
+
+## stasis_field_superior
+> tags: gameplayImpact  
+> info: Stasis field affected units instantly lose all cloak and jump.
+
+Ships affected by tasic field effect will instantly lose all cloak and jump, instead of slowly drained.
 
 ## random_orb_fire_range
 > tags: gameplayImpact  
@@ -336,7 +483,13 @@ Enable no movement requirement for Sniper Gun, which are disabled without this m
 > tags: gameplayImpact, recomputeUnitsRequired  
 > info: Weapons will fire with their range become more accurate.
 
-Weapon will compute their true bullets travel range, and fire when enemies enter this range, rather than the range stat. This also makes the attack range of Orb Launcher become insanely long.
+Weapons will compute their true bullets travel range, and fire when enemies enter this range, rather than the range stat. This also makes the attack range of Orb Launcher become insanely long if `orb_overshoot` is enabled.
+
+## infinity_weapon_range
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Weapons have infinity range.
+
+Weapons have infinity range, their bullets can travel forever and instant weapons can damage enemies at any range.
 
 ## mods_one_free_share
 > tags: gameplayImpact, recomputeUnitsRequired  
@@ -361,6 +514,24 @@ Negative reload time bouns of all weapon mods now affect energy per shot instead
 > info: Weapon mods share penalty increased to 25% from 15%.
 
 Share weapon mods now suffer a heavier penalty, 25% per share rather than 15% per share.
+
+## mods_no_share_penalty
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Removes weapon mods share penalty.
+
+Share weapon mods do not come with penalty.
+
+## mods_no_flat_range
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Removes the flat range bonus from Weapon mods.
+
+Remove flat range bonus from Targeting Subsystem and Speed Coils.
+
+## mods_spinal_advanced
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Spinal Turret Mound improves all weapon stats slightly.
+
+Enables weapons modifiers of Spinal Turret Mound from gamedev.
 
 ## flame_hazard
 > tags: gameplayImpact  
@@ -495,17 +666,47 @@ Cloaked unarmed units are completely disappeared to enemies. They are not shown 
 
 All units passively gains cloak at a rate of 21% of mass per second.
 
+## instant_weapons_hits_cloak
+> tags: gameplayImpact  
+> info: Instant weapons can hit cloaked units.
+
+Make cloaked units vulnerable to instant weapons. Tesla bolts cannot bounce to cloaked units without `tesla_bounce_cloak`.
+
+## tesla_bounce_cloak
+> tags: gameplayImpact  
+> info: Tesla bolts can bounce to cloaked units.
+
+Tesla bolts can bounce to cloaked units. Tesla turrets cannot attack cloaked units directly without `instant_weapons_hits_cloak`.
+
 ## jump_no_minjump
 > tags: gameplayImpact  
 > info: Jump engines do not have min jump distance.
 
 Remove the min jump to jump.
 
+## jump_auto_turn
+> tags: gameplayImpact  
+> info: Jump engines will automatically issue a jump move for burst turn.
+
+When a unit with jump is turning, it will jump to instantly finish the turn, save the time.
+
+## jump_auto_move
+> tags: gameplayImpact  
+> info: Jump engines will automatically issue a jump move when jump is fully charged.
+
+When jump is fully charged and the unit is moving, it will jump to shorten the trip.
+
 ## hide_stats
 > tags: displayImpact, informingImpact, clearNetRequired  
 > info: Cannot see hp, energy and shield stats of units.
 
 Hp, energy and shield stats of units are not shown to players, but they are still there.
+
+## hide_bullets
+> tags: displayImpact, informingImpact, clearNetRequired  
+> info: Cannot see bullets.
+
+Bullets are not shown to players, but they are still there, and units with avoid bullets ai can still avoid them, and PD turrets still shoot bullets normally.
 
 ## look_up
 > tags: displayImpact, clearNetRequired  
@@ -531,6 +732,12 @@ Bullets will spinning on clients. Doesn't affect their true rotation.
 
 Position of everything are set to multiples of 100 on clients. Doesn't affect their true position.
 
+## no_rock
+> tags: displayImpact  
+> info: Erase all rocks, structures, debrees, clouds from the map.
+
+Remove all flavor objects from the map, only things related to combat left.
+
 ## burn_effect
 > tags: displayImpact  
 > info: Units have burning visul effects.
@@ -555,9 +762,8 @@ Units warps into the battlefield rather than assembled.
 
 Destroyed units fly upwards, throws their wrecks in the same direction.
 
-## generating_theme
-> tags: mapGeneratorImpact  
-> info: Map generator will generate theme and less rock.
+## hide_mouse
+> tags: displayImpact  
+> info: Hide players mouse.
 
-The map generator will set the theme of the battlefield when the game starts.  
-One or more types of rocks will be excluded from generating.
+Remove the mouse display that informs players about others focus and actions.
