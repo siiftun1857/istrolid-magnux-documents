@@ -146,24 +146,28 @@ You are allowed to do anything with units in your team, includes move, follow, s
 
 ## ai_only
 > tags: controllingImpact  
+> groups: ai_tournament  
 > info: Disable manual control, only AI rules is allowed.
 
 You cannot control units, units are exclusivly controlled by their AI. Useful when you want host an AI only race.
 
 ## ai_off
 > tags: controllingImpact  
+> groups: tournament, ai_tournament  
 > info: Disable AI rules.
 
 All ai rules are disabled, only manual controls.
 
 ## ai_player_disabled
 > tags: gameplayImpact  
+> groups: tournament  
 > info: Disable AI players.
 
 AI players are disabled. Enabling this modifier will kick all AI players.
 
 ## fleet_lock
 > tags: controllingImpact  
+> groups: tournament  
 > info: Disable AI rules.
 
 All ai rules are disabled, only manual controls.
@@ -304,6 +308,7 @@ All parts of units without any weapons are tripled, while the cost to build them
 
 ## hpd_singlehit
 > tags: gameplayImpact  
+> groups: vanilla_defects  
 > info: Heavy pd bullets are destroyed upon hitting any unit.
 
 Heavy PD bullets are set to dead when they hit any unit, rather than using the "remaining damage" mechanic.
@@ -368,6 +373,19 @@ When pulls and pushes hit units, both the unit fire them and the unit get hit ar
 
 Pull and push bullets will apply their force effect as long as they are touching an enemy, even if they have been hit before.
 
+## weapon_aim_ignore_arm_delay
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Weapons aim do not computre arm delay effect.
+
+Weapons aim will assume the bullet fly towards their target immediately after fired, even if they don't.
+
+## orb_no_delay
+> tags: gameplayImpact  
+> info: Orb has no arm delay.
+
+Orbs will skip their 2.5625-second arm delay and immediately fly towards their target.
+
 ## phase_bomb_no_delay
 > tags: gameplayImpact  
 > info: Phase bomb has no arm delay.
@@ -404,12 +422,13 @@ Tracking weapons can fire even if their target isn't in firing arc.
 
 When Orbs released from their pods, they will target enemies and change their launch direction.
 
-## orb_overshoot
+## orb_defects
 > tags: gameplayImpact  
 > groups: vanilla_defects  
-> info: Orbs from Orb launcher can overshoot an extremely long range.
+> info: Orbs from Orb launcher have random stage time and can overshoot an extremely long range.
 
-Make overshoot range of Orbs extended by bullet speed mods.
+Make overshoot range of Orbs extended by bullet speed mods.  
+The time of orb released from their pod become random.
 
 ## no_overshoot
 > tags: gameplayImpact  
@@ -454,12 +473,12 @@ All ships are slowed and get their cloak and jump drained, just like what stasic
 
 Ships affected by tasic field effect will instantly lose all cloak and jump, instead of slowly drained.
 
-## random_orb_fire_range
+## random_energy_transfer_target
 > tags: gameplayImpact  
 > groups: vanilla_defects  
-> info: Release time of orb spheres from Orb Launcher are back random.
+> info: The order to share energy with energy transfer are random.
 
-The time of orb released from their pod become random.
+Energy tranfer will randomly choose their share target instead of prioritize low energy allies first.
 
 ## random_machine_gun_spread
 > tags: gameplayImpact  
@@ -644,15 +663,10 @@ Cloaked units can still be decloaked by stasis, cloak decay overtime, or fire we
 
 ## cloak_vulnerable
 > tags: gameplayImpact  
+> groups: vanilla_defects  
 > info: Cloaked ships are vulnerable to multihit and aoe.
 
 Make cloaked units vulnerable to multihit bullets and aoe explosions.
-
-## cloak_invulnerable
-> tags: gameplayImpact  
-> info: Cloaked ships are immune to all types of damage.
-
-Cloaked units are immune to all types of damage, includes multihit, aoe, and burn damage. Their burn value still decay overtime despite not doing damage.
 
 ## cloak_disappeared
 > tags: gameplayImpact, informingImpact  
@@ -734,6 +748,7 @@ Position of everything are set to multiples of 100 on clients. Doesn't affect th
 
 ## no_rock
 > tags: displayImpact  
+> groups: tournament  
 > info: Erase all rocks, structures, debrees, clouds from the map.
 
 Remove all flavor objects from the map, only things related to combat left.
@@ -764,6 +779,7 @@ Destroyed units fly upwards, throws their wrecks in the same direction.
 
 ## hide_mouse
 > tags: displayImpact  
+> groups: tournament  
 > info: Hide players mouse.
 
 Remove the mouse display that informs players about others focus and actions.
