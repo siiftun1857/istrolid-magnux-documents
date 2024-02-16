@@ -119,7 +119,8 @@ Orbs will enters their 2nd stage exactly at their minimum range, i.e. in 51 tick
 Orbs do not add extra 24 ticks to their max life, making them do not overshoot an extreme range with speedcoils.
 
 ### Overshooted damage decay
-Bullets do reduced damage in their overshooted range, linearly from 100% damage at 100% range, to 0% damage at 100% range + 100% overshooted range.
+Bullets do reduced damage in their overshooted range, linearly from 100% damage at 100% range, to 0% damage at 100% range + 100% overshooted range.  
+Sidewinder bullets are the sole exception that do decay linearly from 100% damage at 150% range, to 0% damage at 225% range.  
 
 ## Sim units
 ### Radius compute
