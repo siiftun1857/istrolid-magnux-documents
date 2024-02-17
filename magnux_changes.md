@@ -157,7 +157,7 @@ Units tick are cycles in an order:
 1. Units regain energy and cloak decay
 2. Stasis Field and Jump Engine destabilize user's cloak
 3. Cloak Generator try cloak an uncloaked user
-4. Warhead try explode
+4. Warhead try explode, Stasis Field try affect enemies
 5. Weapons try fire, and if any weapon fire decloaked user, loop again all weapons that skipped cloaked targets on new decloaked targets
 6. Move, as well as everything else move
 7. Cloak Generator, Shield Generator, Jump Engine
