@@ -124,6 +124,13 @@ The effect is only visible when such weapon has their reload time significantly 
 
 Add an 1/16 second delay between bullets of a volley of Sidewinders. Without this modifier, Sidewinders will unload its entire volley at the same time.
 
+## autocannon_volley_no_delay
+> tags: gameplayImpact  
+> info: Autocannon has no delay between bullets in a volley.
+
+Remove the 1/8 second delay between bullets of a volley of Autocannon.
+
+
 ## units_collide_during_warpin
 > tags: gameplayImpact  
 > groups: vanilla_defects  
@@ -366,12 +373,13 @@ When pulls and pushes hit units, the unit fire them are pulled or pushed for 50%
 
 When pulls and pushes hit units, both the unit fire them and the unit get hit are pulled or pushed, and the strength is based on their mass, lighter ships are affected more than heavy ships.
 
-## push_pull_waves_force_hit_per_tick
+## push_pull_waves_pinning
 > tags: gameplayImpact  
 > groups: vanilla_defects  
-> info: Bullets of pulles and pushes apply their force effect every tick even if they did it to a target before.
+> info: Bullets of pulles and pushes apply their force effect every tick even if they did it to a target before, and they will cancel force effect if target has velocity towards force direction.
 
-Pull and push bullets will apply their force effect as long as they are touching an enemy, even if they have been hit before.
+Pull and push bullets will apply their force effect as long as they are touching an enemy, even if they have been hit before.  
+They will also cancel force effect if target has velocity towards force direction, causing stacking pulls or pushs cancel each other.
 
 ## weapon_aim_ignore_arm_delay
 > tags: gameplayImpact  
@@ -460,6 +468,13 @@ Energy transfer drains energy from enemies. In most cases this put enemies in a 
 > info: Energy transfer has infinity operate range.
 
 Energy transfer do not have an operation range limit, charge all allies. With `energy_nosferatu_transfer`, they also drain all enemies.
+
+## energy_transfer_thershold
+> tags: gameplayImpact  
+> info: Energy transfer will not darin the user to below 1 second of generation or 50% capacity, whatever one is lower.
+
+Energy transfer do not drain the user's energy to below the value equal to 1 second of energy regen or 50% energy capacity, depending which one is lower.
+
 
 ## stasis_field_hazard
 > tags: gameplayImpact  
@@ -692,6 +707,12 @@ Make cloaked units vulnerable to instant weapons. Tesla bolts cannot bounce to c
 
 Tesla bolts can bounce to cloaked units. Tesla turrets cannot attack cloaked units directly without `instant_weapons_hits_cloak`.
 
+## tesla_bounce_unlimited
+> tags: gameplayImpact  
+> info: Tesla bolts can bounce unlimited amount of units.
+
+Tesla bolts can bounce to any amount of units, instead of up to 10 units.
+
 ## jump_no_minjump
 > tags: gameplayImpact  
 > info: Jump engines do not have min jump distance.
@@ -709,6 +730,12 @@ When a unit with jump is turning, it will jump to instantly finish the turn, sav
 > info: Jump engines will automatically issue a jump move when jump is fully charged.
 
 When jump is fully charged and the unit is moving, it will jump to shorten the trip.
+
+## weapons_velocity_inheritance
+> tags: gameplayImpact  
+> info: Bullets gain velocity from their caster.
+
+When a bullet is created, its velocity adds the velocity of the unit fired it.
 
 ## hide_stats
 > tags: displayImpact, informingImpact, clearNetRequired  
