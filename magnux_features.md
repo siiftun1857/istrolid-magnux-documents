@@ -137,6 +137,10 @@ This is not happening on the server, as unit shield radius rendering is perfectl
 Collision push direction is reversed for units in the exact pos in beta team.  
 Units have reduced collision with other units with different "warp in" value than itself.
 
+### Engines usage
+When the unit is moving, it sorts its engines by energy efficiency, prioritizing engines with high thrust per energy cost.  
+This means that a unit with hybrid engine types and low energy will always do the most thrust with limited energy.
+
 ### Weapons engagements
 Instant weapons will not fire if the target is dead. Affected weapons includes Light Beam, Heavy Beam, Tesla Turret, Point Defence.  
 Weapons will fire if can damage the target. This allows Artillery Gun, Heavy Flak, Phase Bomb Launcher, Gravity Pull Wave, Gravity Push Wave, Flamethrower engage cloaked targets if cloak vulnerable to these weapons are enabled.  
