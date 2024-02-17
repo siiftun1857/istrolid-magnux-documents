@@ -138,7 +138,7 @@ Collision push direction is reversed for units in the exact pos in beta team.
 Units have reduced collision with other units with different "warp in" value than itself.
 
 ### Engines usage
-When the unit is moving, it sorts its engines by energy efficiency, prioritizing engines with high thrust per energy cost.  
+When the unit is moving, it sorts its engines by energy efficiency, prioritizing engines with high thrust per energy cost.  
 This means that a unit with hybrid engine types and low energy will always do the most thrust with limited energy.
 
 ### Weapons engagements
