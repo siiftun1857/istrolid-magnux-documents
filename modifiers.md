@@ -24,6 +24,14 @@ This is an extremely dangerous modifier. Use with cautious!
 The map generator will set the theme of the battlefield when the game starts.  
 One or more types of rocks will be excluded from generating.
 
+## weapon_aim_loop_simpling
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Weapons aim use 32x loop simpling, instead of quadratic equation solver.
+
+By default the server use a quadratic equation solver to compute movement interception for weapon aim, which gives perfect accuracy, proper process both result of the equation, and great performance improvement.  
+This modifier enables vanilla weapon aim, a loop simpling that check each 1/32 part of bullet life to find the least miss one.
+
 ## gamedev
 > tags: recomputeUnitsRequired, clearNetRequired, gameplayImpact  
 > incompatible_with: legacy_v4  
@@ -72,6 +80,13 @@ Having battleship thruster on unit is nologer being considered as invalid.
 > info: Units don't know how to attack cloaked units.
 
 Remove cloaked enemies from weapons targeting of units.
+
+## units_radius_smallest_circle
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Units center and radius will use the smallest circle.
+
+The center and radius compute will use the smallest circle for endpoints of all parts.  
+However, clients compute units center on their own, do not get it from the server, result in a visual weirdness issue.
 
 ## units_radius_ignore_occupied_cells
 > tags: gameplayImpact, recomputeUnitsRequired  
@@ -129,7 +144,6 @@ Add an 1/16 second delay between bullets of a volley of Sidewinders. Without thi
 > info: Autocannon has no delay between bullets in a volley.
 
 Remove the 1/8 second delay between bullets of a volley of Autocannon.
-
 
 ## units_collide_during_warpin
 > tags: gameplayImpact  
@@ -345,6 +359,12 @@ Tesla will now fire and arc nearby missiles to destroy them.
 
 Flak bullets will delete all missiles in its blast area.
 
+## sidewinder_hits_missiles
+> tags: gameplayImpact  
+> info: Sidewinder now hits missiles.
+
+Sidewinders now engage hostile missiles to ram and destroy them.
+
 ## remove_minimum_range
 > tags: gameplayImpact  
 > info: Remove minimum range of Artillery Gun and Orb Launcher.
@@ -373,13 +393,26 @@ When pulls and pushes hit units, the unit fire them are pulled or pushed for 50%
 
 When pulls and pushes hit units, both the unit fire them and the unit get hit are pulled or pushed, and the strength is based on their mass, lighter ships are affected more than heavy ships.
 
-## push_pull_waves_pinning
+## push_pull_waves_force_hit_per_tick
 > tags: gameplayImpact  
 > groups: vanilla_defects  
-> info: Bullets of pulles and pushes apply their force effect every tick even if they did it to a target before, and they will cancel force effect if target has velocity towards force direction.
+> info: Bullets of pulles and pushes apply their force effect every tick even if they did it to a target before.
 
-Pull and push bullets will apply their force effect as long as they are touching an enemy, even if they have been hit before.  
-They will also cancel force effect if target has velocity towards force direction, causing stacking pulls or pushs cancel each other.
+Pull and push bullets will apply their force effect as long as they are touching an enemy, even if they have been hit before. 
+
+## push_pull_waves_no_instant_pinning
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Bullets of pulles and pushes will not repeatedly apply their force effect until the target has velocity towards force direction.
+
+Pull and push bullets will not repeatedly apply their force effect until the target has velocity towards force direction.
+
+## push_pull_waves_no_stack
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Bullets of pulles and pushes can cancel force effect even if they did not hit the target before.
+ 
+Push and push bullets will cancel force effect if target has velocity towards force direction, even if they never do the effect to the target before, causing stacking pulls or pushs cancel each other.
 
 ## weapon_aim_ignore_arm_delay
 > tags: gameplayImpact  
@@ -695,17 +728,30 @@ Cloaked unarmed units are completely disappeared to enemies. They are not shown 
 
 All units passively gains cloak at a rate of 21% of mass per second.
 
+## heavy_beam_healing
+> tags: gameplayImpact  
+> info: Heavy beams can repair friendly units.
+
+Heavy Beam turrets now capable of shooting allies to repair them, increasing hp equal to their damage, and overheal can reduce burn amount.  
+They still capable of shooting enemies to do damage.
+
 ## instant_weapons_hits_cloak
 > tags: gameplayImpact  
 > info: Instant weapons can hit cloaked units.
 
 Make cloaked units vulnerable to instant weapons. Tesla bolts cannot bounce to cloaked units without `tesla_bounce_cloak`.
 
+## tesla_hits_cloak
+> tags: gameplayImpact  
+> info: Tesla bolts can hit cloaked units.
+
+Make cloaked units vulnerable to Tesla turrets. Tesla bolts cannot bounce to cloaked units without `tesla_bounce_cloak`.
+
 ## tesla_bounce_cloak
 > tags: gameplayImpact  
 > info: Tesla bolts can bounce to cloaked units.
 
-Tesla bolts can bounce to cloaked units. Tesla turrets cannot attack cloaked units directly without `instant_weapons_hits_cloak`.
+Tesla bolts can bounce to cloaked units. Tesla turrets cannot attack cloaked units directly without `instant_weapons_hits_cloak` or `tesla_hits_cloak`.
 
 ## tesla_bounce_unlimited
 > tags: gameplayImpact  
@@ -736,6 +782,12 @@ When jump is fully charged and the unit is moving, it will jump to shorten the t
 > info: Bullets gain velocity from their caster.
 
 When a bullet is created, its velocity adds the velocity of the unit fired it.
+
+## no_sidewinder
+> tags: gameplayImpact  
+> info: Disallow usages of Sidewinder.
+
+Invalidate unit designs if they have Sidewinder equipped.
 
 ## hide_stats
 > tags: displayImpact, informingImpact, clearNetRequired  
