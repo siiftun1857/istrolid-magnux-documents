@@ -81,6 +81,14 @@ Having battleship thruster on unit is nologer being considered as invalid.
 
 Remove cloaked enemies from weapons targeting of units.
 
+## cloak_initially_decloak
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> incompatible_with: ghost_fleet  
+> info: Cloaked units spawn with decloaked.
+
+Units spawn without cloak, even if they are capable of cloaking.
+
 ## units_radius_smallest_circle
 > tags: gameplayImpact, recomputeUnitsRequired  
 > info: Units center and radius will use the smallest circle.
