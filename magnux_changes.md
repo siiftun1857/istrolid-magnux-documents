@@ -41,6 +41,9 @@ Some modifiers can change to send different data to each player.
 Players join do not remove disconnected players.  
 After a game started, disconnected players are cleared from the server.
 
+### Performance data
+The server has its own timer tree to track performance data. Performance data is included in network data by default.
+
 ## Sim map
 ### Map generating
 Map generator use seed, and report seed after a game. Start with a seed is possible.  
@@ -68,9 +71,6 @@ Units AI will be executed in the order of they build, instead of a random order.
 AI rules do not add randomness to order destination.  
 Field rules do not add random value to queue priority.  
 "wiggle" rules are skipped.
-
-### Performance data
-The server has its own timer tree to track performance data. Performance data is included in network data by default.
 
 ## Sim players
 ### Realtime income
@@ -111,8 +111,7 @@ Dead HPD do not damage units.
 If HPD bullet do damage to a unit with HP below its "remaining damage", the "remaining damage" will be reduced by the HP and the bullet keep flying to hit next thing.
 
 ### Push and pull hits once
-Push and pull bullet will only hit a target once.  
-Push and pull bullet will apply force regardless target speed.
+Push and pull bullet will only hit a target once. apply force regardless target speed for once, and repeat force effect until target has speed in force direction.
 
 ### Orb2
 Orbs will enters their 2nd stage exactly at their minimum range, i.e. in 51 ticks, and do an effectively 41 ticks arm delay.  
