@@ -74,6 +74,13 @@ Having supercapital bridge on unit is nologer being considered as invalid.
 
 Having battleship thruster on unit is nologer being considered as invalid.
 
+## explosion_damage_delay
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Explosions do damage after 1 tick after their creation.
+
+Explosions will not do damage at the tick they are created, their damage is delayed to the next tick.
+
 ## cloak_not_attacked
 > tags: gameplayImpact  
 > groups: vanilla_defects  
