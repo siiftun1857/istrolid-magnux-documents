@@ -96,6 +96,19 @@ Remove cloaked enemies from weapons targeting of units.
 
 Units spawn without cloak, even if they are capable of cloaking.
 
+## units_idle_ai_target_2nd_closest
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Units idle ai will target the 2nd closest enemy if the closest enemy is cloaked.
+
+If the closest enemy is cloaked, the idleAI of unit will target the next closest enemy, regardless this one is cloaked or not.
+
+## units_radius_500m
+> tags: gameplayImpact, recomputeUnitsRequired  
+> info: Units radius are at least 500m.
+
+The min radius of a unit is now 500m, instead of 10m, or 20m with `units_radius_ignore_occupied_cells`.
+
 ## units_radius_smallest_circle
 > tags: gameplayImpact, recomputeUnitsRequired  
 > info: Units center and radius will use the smallest circle.
@@ -380,6 +393,12 @@ Flak bullets will delete all missiles in its blast area.
 
 Sidewinders now engage hostile missiles to ram and destroy them.
 
+## sidewinder_extended_retargeting
+> tags: gameplayImpact  
+> info: Sidewinder retargeting enemies in futher distance.
+
+Sidewinder retargeting range increased by its remaining travel range from a static 1500m, and also try retargeting every tick instead of every 4 tick.
+
 ## remove_minimum_range
 > tags: gameplayImpact  
 > info: Remove minimum range of Artillery Gun and Orb Launcher.
@@ -459,6 +478,12 @@ When missiles lose their target, they will lock down a new target, if any.
 > info: Missiles can predict target movement.
 
 Missiles will moving towards the destination of their target rather than the current location of their target.
+
+## missiles_avoid_hpd
+> tags: gameplayImpact  
+> info: Missiles can dodge HPD bullets.
+
+Missiles will actively moving to dodge incoming point defence bullets, includes HPD bullets, and Flak bullets if `flak_hits_missiles` is on, and Sidewinder bullets if `sidewinder_hits_missiles` is on.
 
 ## missiles_track_cloaked
 > tags: gameplayImpact  
@@ -626,6 +651,13 @@ Burn value of units are set to their hp when they are built. This quickly drains
 > info: Units are under a superior version of cloak upon build.
 
 Units are cloaked upon build, and this cloak don't decay overtime, unless they are decloaked.
+
+## warhead_detonate_delay
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Warheads detonate delayed 1 tick.
+
+Warheads explode in post death instead of in the tick they are triggered.
 
 ## warhead_disable
 > tags: gameplayImpact  
