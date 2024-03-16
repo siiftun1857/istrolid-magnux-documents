@@ -96,6 +96,13 @@ Remove cloaked enemies from weapons targeting of units.
 
 Units spawn without cloak, even if they are capable of cloaking.
 
+## units_move_defects
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Units do not try to save energy and force for movement, result in waste of energy and move beyond destination.
+
+Units can move beyon their destination, causing them spinning in a point and consistently waste energy and aim.
+
 ## units_idle_ai_target_2nd_closest
 > tags: gameplayImpact  
 > groups: vanilla_defects  
@@ -454,6 +461,13 @@ Push and push bullets will cancel force effect if target has velocity towards fo
 > info: Weapons aim do not computre arm delay effect.
 
 Weapons aim will assume the bullet fly towards their target immediately after fired, even if they don't.
+
+## weapon_aim_no_steady_aoe
+> tags: gameplayImpact  
+> groups: vanilla_defects  
+> info: Weapons always aim the near edge of the target.
+
+Weapons aim will always fire weapons at target's near edge, causing Phase Bomb can be easily dodged by stopping the targeted unit.
 
 ## orb_no_delay
 > tags: gameplayImpact  
